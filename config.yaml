@@ -3,6 +3,8 @@ subject: 'cs'
 
 # 検索キーワード
 keywords:
-        kaggle: 3
-        resnet: 3
-        anomaly detection: 1
+        graph neural network: 3
+        reinforcement learning: 3
+        graph embedding: 2
+        persistent memory performance: 3
+        memory access pattern: 2
