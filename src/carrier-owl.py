@@ -38,7 +38,11 @@ def get_articles_info(subject):
         idx = 2
     else:
         idx = 1
-    articles_html = html.split(f'{year}</h3>')[idx]   # <--------- 要注意
+    all_articles = html.split(f'{year}</h3>')
+    if len(all_articles) <= idx:
+        print("No articles found today")
+        return list()
+    articles_html = all_articles[idx]   # <--------- 要注意
 
     # 論文それぞれのurlを取得
     bs = BeautifulSoup(articles_html)
