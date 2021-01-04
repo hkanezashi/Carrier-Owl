@@ -65,12 +65,15 @@ def serch_keywords(id_list, keywords_dict):
         html = response.text
 
         bs = BeautifulSoup(html)
-        if not bs:
+        title_obj = bs.find('meta', attrs={'property': 'og:title'})
+        if not title_obj:
             continue
-        title = bs.find('meta', attrs={'property': 'og:title'})['content']
-        abstract = bs.find(
-                'meta',
-                attrs={'property': 'og:description'})['content']
+        title = title_obj['content']
+        
+        abs_obj = bs.find('meta', attrs={'property': 'og:description'})
+        if not abs_obj:
+            continue
+        abstract = abs_obj['content']
 
         sum_score = 0
         hit_kwd_list = []
