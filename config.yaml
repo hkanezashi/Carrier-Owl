@@ -9,3 +9,5 @@ keywords:
         graph embedding: 2
         persistent memory performance: 3
         memory access pattern: 2
+        optane memory: 2
+        optane graph: 4
