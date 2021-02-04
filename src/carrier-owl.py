@@ -87,7 +87,8 @@ def serch_keywords(id_list, keywords_dict, enable_trans=False):
             title_trans = get_translated_text('ja', 'en', title) if enable_trans else title
             abstract = abstract.replace('\n', '')
             abstract_trans = get_translated_text('ja', 'en', abstract) if enable_trans else abstract
-            abstract_trans = textwrap.wrap(abstract_trans, 40)  # 40行で改行
+            line_chars = 40 if enable_trans else 100
+            abstract_trans = textwrap.wrap(abstract_trans, line_chars)  # 40文字（日本語） / 100文字(英語)で改行
             abstract_trans = '\n'.join(abstract_trans)
 
             urls.append(url)
