@@ -50,7 +50,7 @@ def get_articles_info(subject):
     return id_list
 
 
-def serch_keywords(id_list, keywords_dict):
+def serch_keywords(id_list, keywords_dict, enable_trans=False):
     urls = []
     titles = []
     abstracts = []
@@ -84,9 +84,9 @@ def serch_keywords(id_list, keywords_dict):
                 sum_score += score
                 hit_kwd_list.append(word)
         if sum_score != 0:
-            title_trans = get_translated_text('ja', 'en', title)
+            title_trans = get_translated_text('ja', 'en', title) if enable_trans else title
             abstract = abstract.replace('\n', '')
-            abstract_trans = get_translated_text('ja', 'en', abstract)
+            abstract_trans = get_translated_text('ja', 'en', abstract) if enable_trans else abstract
             abstract_trans = textwrap.wrap(abstract_trans, 40)  # 40行で改行
             abstract_trans = '\n'.join(abstract_trans)
 
