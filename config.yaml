@@ -4,10 +4,12 @@ subject: 'cs'
 # 検索キーワード
 keywords:
         graph neural network: 3
-        reinforcement learning portfolio: 3
+        reinforcement learning: 3
+        explainable gnn: 3
         stock prediction: 2
         graph embedding: 2
         persistent memory: 3
         memory access pattern: 2
         optane: 2
         nvram: 3
+        reram: 3
